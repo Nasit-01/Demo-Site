@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<style>
+    .content{
+        margin-top: 10%;
+        text-align: center;
+    }
+    h1,h4,h2{
+        color:#1f58a8;
+        
+    }
+
+   
+    
+</style>
+
+<div class="main" style="display: flex; margin: 30px 20px;">
+<div class="content">
+    <h1 style="color:#1f58a8;">Contact Us</h1>
+    <p style="font-size: 20px; margin-left: 32%;">Please send your requirment and  we'll get back to you earliest.</p><br><br>
+    <h4 style="color:#1f58a8;">Inquiry: </h4>
+    <a href="mailto:help@ntw.com">help@ntw.com</a>
+</div>
+
+<div class="container" style="width: 30%; border: 1px solid #1f58a8">
+    <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center; margin:10px 0px;">Get in touch</h2>
+    <form action="\contact" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" required class="form-control" id="name" name="name" placeholder="John Doe">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" required class="form-control" id="email" name="email" placeholder="John12@gmail.com">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="9988776655">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" required id="desc" name="desc" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary mb-5">Submit</button>
+    </form>
+</div>
+</div>
+{% endblock body %}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>NtechWelly | {% block title %}{% endblock title %}</title>
+
+    <style>
+        body{
+            background-color:#edf0f3cc;
+        }
+        nav{
+            font-size:19px;
+            color: #1f58a8;
+        }
+        li:hover{
+            text-decoration: underline;
+        }
+        footer{
+            background-color:#1f58a8 ;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-primery sticky-top " style="background-color: #dfe9f0e5;">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+
+                <img src="https://www.graphicsprings.com/filestorage/stencils/a73c8901872307936320ef5edba57f56.png?width=500&height=500"
+                    alt="NtechWelly" width="60" height="50">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: blue;" aria-current="page" href="\">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: blue;" href="\technologies">Technologies</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: blue;" href="\services" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu " style="--bs-bg-opacity: .7; background-color: #dfe9f0e5;" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" style="color:blue;" href="#">Software Devlopment</a></li>
+                            <li><a class="dropdown-item" style="color:blue;" href="#">Web Devlopment</a></li>
+                            <li><a class="dropdown-item" style="color:blue;" href="#">Ecommerce</a></li>
+                            <li><a class="dropdown-item" style="color:blue;" href="#">UX/UI Design</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" style="color: blue;" href="#">Consultancy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: blue;" href="\projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: blue;" href="\about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: blue;" href="\contact">Conatact us</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a style="margin-left: 15px;" href="\loginuser"><button class="btn btn-outline-primary">Login</button></a>
+            </div>
+        </div>
+    </nav>
+
+    
+{% if messages %}
+{% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show " role="alert">
+      <strong>{{ message }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+{% endif %}
+{% block body %}{% endblock body %}
+
+
+<footer class="py-5 my-0 border-top">
+    <div class="row px-5">
+      <div class="col-2">
+        <h5 style="color:whitesmoke;">Services</h5>
+        <ul class="nav flex-column ">
+          <li class="nav-item mb-2 "><a href="\services" class="nav-link p-0 text-white ">Custom Software Devlopment</a></li>
+          <li class="nav-item mb-2"><a href="\services" class="nav-link p-0 text-white">Web Devlopment</a></li>
+          <li class="nav-item mb-2"><a href="\services" class="nav-link p-0 text-white">UX/UI Design</a></li>
+          <li class="nav-item mb-2"><a href="\services" class="nav-link p-0 text-white">Ecommerce</a></li>
+          <li class="nav-item mb-2"><a href="\services" class="nav-link p-0 text-white">Consultancy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-2">
+        <h5 style="color:whitesmoke;">Technologies</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="\technologies" class="nav-link p-0 text-white">Java</a></li>
+          <li class="nav-item mb-2"><a href="\technologies" class="nav-link p-0 text-white">Python</a></li>
+          <li class="nav-item mb-2"><a href="\technologies" class="nav-link p-0 text-white">.Net</a></li>
+          <li class="nav-item mb-2"><a href="\technologies" class="nav-link p-0 text-white">JavaScript</a></li>
+          <li class="nav-item mb-2"><a href="\technologies" class="nav-link p-0 text-white">Php</a></li>
+        </ul>
+      </div>
+
+      <div class="col-2">
+        <h5 style="color:whitesmoke;">projects</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="\projects" class="nav-link p-0 text-white">Energy & Utilies</a></li>
+          <li class="nav-item mb-2"><a href="\projects" class="nav-link p-0 text-white">Health care</a></li>
+          <li class="nav-item mb-2"><a href="\projects" class="nav-link p-0 text-white">Media & Entertaiment</a></li>
+          <li class="nav-item mb-2"><a href="\projects" class="nav-link p-0 text-white">Retail & Ecommerce</a></li>
+          <li class="nav-item mb-2"><a href="\projects" class="nav-link p-0 text-white">Travels</a></li>
+        </ul>
+      </div>
+
+      <div class="col-4 offset-1">
+        <form style="color: whitesmoke;">
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of whats new and exciting from us.</p>
+          <div class="d-flex w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between py-4 my-4 border-top">
+        
+      <p class="px-5 text-white">© 2022 NtechWelly, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+
+</body>
+
+</html>
